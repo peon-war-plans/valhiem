@@ -3,9 +3,9 @@
         "game_uid": "valhiem",
         "version": "0.1.0",
         "type": "steamcmd",
-        "project": "https://github.com/nox-noctua-consulting/peon-plans/tree/master/games/valhiem",
+        "project": "https://github.com/peon-war-plans/valhiem",
         "maintainers": "umlatt <richard@noxnoctua.com>",
-        "description": "https://raw.githubusercontent.com/nox-noctua-consulting/peon-recipies/master/csgo/README.md"
+        "description": "https://raw.githubusercontent.com/peon-war-plans/valhiem/main/README.md"
     },
     "container_config": {
         "image": "cm2network/steamcmd",
