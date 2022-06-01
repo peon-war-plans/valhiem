@@ -11,8 +11,11 @@ exec 1>>$logfile 2>&1
 echo "##################### STARTING SERVER ######################"
 # Create a server.config file which contains relevant connection info for gamers (in the config directory)
 conf_file="/home/steam/.config/unity3d/IronGate/Valheim/server.config"
-#public_ip=$(dig TXT +short o-o.myaddr.l.google.com @ns1.google.com | tr -d '"')
-public_ip=$(which dig)
+until [ ! -f "/usr/bin/dig" ]; do
+    echo "Waiting for dig to be installed"
+    sleep 1
+done
+public_ip=$(/usr/bin/dig TXT +short o-o.myaddr.l.google.com @ns1.google.com | tr -d '"')
 printf "IP [$public_ip] Name [$SERVERNAME] World [$WORLDNAME] Password [$PASSWORD]" > $conf_file
 # CUSTOM GAME SERVER COMMAND
 cd data && ./valheim_server.x86_64 -name $SERVERNAME -port 2456 -world $WORLDNAME -password $PASSWORD -public 1
