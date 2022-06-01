@@ -11,10 +11,10 @@ exec 1>>$logfile 2>&1
 echo "##################### STARTING SERVER ######################"
 # Create a server.config file which contains relevant connection info for gamers (in the config directory)
 conf_file="/home/steam/.config/unity3d/IronGate/Valheim/server.config"
-public_ip=$(dig TXT +short o-o.myaddr.l.google.com @ns1.google.com)
-printf "IP Address: $public_ip" > $conf_file
-printf " Server Name: $SERVERNAME" >> $conf_file
-printf " World Name: $WORLDNAME" >> $conf_file
-printf " Password: $PASSWORD" >> $conf_file
+public_ip=$(dig TXT +short o-o.myaddr.l.google.com @ns1.google.com | tr -d '"')
+printf "IP [$public_ip]" > $conf_file
+printf " Name [$SERVERNAME]" >> $conf_file
+printf " World [$WORLDNAME]" >> $conf_file
+printf " Password [$PASSWORD]" >> $conf_file
 # CUSTOM GAME SERVER COMMAND
 cd data && ./valheim_server.x86_64 -name $SERVERNAME -port 2456 -world $WORLDNAME -password $PASSWORD -public 1
