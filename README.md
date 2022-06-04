@@ -14,11 +14,11 @@ The PEON war plan that Peon uses to deploy your game server.
 
 ### Server World Files
 
-You can get your world files in `/server_config`
+You can get your world files in `./peon/servers/[game_uid]/[server_name]/config`
 
-- If you wish to customise the default servers, log into your server (running Peon) and run ``peon_connect``.
-- Alternatively, you should be able to edit the server files in the data directory of the server (e.g. ``./peon/servers/[game_uid]/[server_name]/``)
-- Logging can be found in ``/var/log/peon/[game_uid].[server_name]``, if required.
+- If you wish to customise the default servers, log into your host (running Peon) and run ``peon``.
+- Alternatively, you should be able to edit the server files in the data/config directory of the server (e.g. ``./peon/servers/[game_uid]/[server_name]/``)
+- Logging can be found in ``/var/log/peon/[game_uid].[server_name]/logs``, if required.
 
 ## Support the Project
 
